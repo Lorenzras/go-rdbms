@@ -13,9 +13,12 @@ var db *sql.DB
 
 func main() {
 	// Capture connection properties.
+	// In powershell, set the DBUSER and DBPASS environment variables with the following syntax:
+	// $env:DUMMYVARIABLE="dummyvalue"
+
 	cfg := mysql.Config{
-		User:                 os.Getenv("DBUSER"),
-		Passwd:               os.Getenv("DBPASS"),
+		User:                 os.Getenv("DBUSER"), 
+		Passwd:               os.Getenv("DBPASS"), 
 		Net:                  "tcp",
 		Addr:                 "127.0.0.1:3306",
 		DBName:               "recordings",
@@ -34,3 +37,4 @@ func main() {
 	}
 	fmt.Println("Connected!")
 }
+
